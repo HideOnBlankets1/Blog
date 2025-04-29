@@ -1,0 +1,59 @@
+/* Text Fade-In */
+.caption h6,
+.caption h2 {
+    opacity: 0;
+    transform: translateY(48px); /* Start slightly lower */
+    animation: fadeInText 0.5s ease-out forwards;
+}
+
+.caption h2 {
+    animation: fadeInText 0.55s ease-in forwards;
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Button Zoom-In with Movement */
+.main-button a {
+    display: inline-block;
+    transform: scale(0.8);
+    opacity: 0;
+    box-shadow: 0 4px 15px rgba(255, 102, 0, 0.5);
+    animation: zoomInButton 0.5s ease-out forwards 0.3s, glowPulse 1s ease-in-out infinite alternate;
+    background: linear-gradient(135deg, #db831fb9, #ff6600);
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Button Zoom-In Animation */
+@keyframes zoomInButton {
+    from {
+        transform: scale(0.8) translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Subtle Glowing Pulse */
+@keyframes glowPulse {
+    from {
+        box-shadow: 0 4px 15px rgba(235, 202, 140, 0.5);
+    }
+    to {
+        box-shadow: 0 4px 25px rgba(255, 200, 100, 0.8);
+    }
+}
